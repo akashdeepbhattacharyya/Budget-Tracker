@@ -1,0 +1,36 @@
+<div>
+  <h2 mat-dialog-title>Add Budget</h2>
+  <mat-dialog-content>
+    <form [formGroup]="budgetForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Select Date For Finding the Budget</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" />
+        <mat-hint>MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker
+          #picker
+          startView="multi-year"
+          (monthSelected)="setMonthAndYear($event, picker)"
+          panelClass="example-month-picker"
+        >
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Budget</mat-label>
+        <input matInput formControlName="budget" type="number" />
+      </mat-form-field>
+      <mat-dialog-actions>
+        <button
+          mat-button
+          type="submit"
+          [disabled]="budgetForm.invalid || isSubmitting"
+        >
+          Submit @if (isSubmitting) {<span class="w-3 h-3 flex"
+            ><mat-spinner></mat-spinner></span
+          >}
+        </button>
+        <button mat-button mat-dialog-close>Close</button>
+      </mat-dialog-actions>
+    </form>
+  </mat-dialog-content>
+</div>

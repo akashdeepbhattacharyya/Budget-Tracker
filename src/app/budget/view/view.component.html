@@ -1,0 +1,34 @@
+<div class="flex items-center justify-center bg-gray-100 dark:bg-gray-900 mt-10">
+  <div
+    class="w-full max-w-7xl p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg"
+  >
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200">
+        Budgets
+      </h1>
+      <button
+        mat-raised-button
+        (click)="addBudget()"
+        class="dark:!bg-[rgb(54,48,74)] dark:!text-white"
+      >
+        Add Budget
+      </button>
+    </div>
+    <div>
+      <mat-form-field class="mb-5 w-full">
+        <mat-label>Select Date</mat-label>
+        <input matInput [matDatepicker]="dp" [(ngModel)]="date" />
+        <mat-hint class="dark:text-white">MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker
+          #dp
+          startView="multi-year"
+          (monthSelected)="setMonthAndYear($event, dp)"
+          panelClass="example-month-picker"
+        >
+        </mat-datepicker>
+      </mat-form-field>
+      <div #chart class="chart-container"></div>
+    </div>
+  </div>
+</div>

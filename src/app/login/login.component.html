@@ -1,0 +1,45 @@
+<div
+  class="login-container flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900"
+>
+  <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 w-96">
+    <h1 class="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+      Login
+    </h1>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" [noValidate]="false">
+      <div class="mb-4">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          [(ngModel)]="username"
+          required
+          class="w-full px-4 py-2 mt-2 border rounded-md text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+        />
+      </div>
+
+      <div class="mb-4">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          [(ngModel)]="password"
+          required
+          class="w-full px-4 py-2 mt-2 border rounded-md text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+        />
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!loginForm.valid"
+        class="w-full py-2 px-4 bg-blue-500 text-white rounded-md disabled:bg-blue-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer dark:bg-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-500"
+      >
+        Login
+      </button>
+    </form>
+
+    <!-- Optional error message -->
+    <!-- <p *ngIf="errorMessage" class="text-red-500 mt-4">{{ errorMessage }}</p> -->
+  </div>
+</div>

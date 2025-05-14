@@ -1,0 +1,37 @@
+@if (authService.isLoggedIn()) {
+<div class="bg-gray-300 dark:bg-gray-800 text-gray-900 dark:text-white gap-20 py-2">
+  <div class="w-full max-w-7xl flex justify-between items-center mx-auto">
+    <a
+      class="px-4 py-2 transition-colors"
+      routerLink="/dashboard"
+      routerLinkActive="border-b border-indigo-200 border-b-indigo-500 text-indigo-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Dashboard
+    </a>
+    <a
+      class="px-4 py-2 transition-colors"
+      routerLink="/transactions"
+      routerLinkActive="border-b border-indigo-200 border-b-indigo-500 text-indigo-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Transaction
+    </a>
+    <a
+      class="px-4 py-2 transition-colors"
+      routerLink="/budget"
+      routerLinkActive="border-b border-indigo-200 border-b-indigo-500 text-indigo-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Budget Management
+    </a>
+
+    <div class="flex items-center gap-4">
+      <span> Hi, {{ user }} </span>
+      <button color="warn" mat-flat-button (click)="authService.logout()">Logout</button>
+    </div>
+  </div>
+</div>
+} @if (loaderService.loading$ | async) {
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}

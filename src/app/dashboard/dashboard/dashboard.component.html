@@ -1,0 +1,33 @@
+<div
+  class="flex items-center justify-center mt-10 bg-gray-100 dark:bg-gray-900"
+>
+  <div
+    class="w-full max-w-7xl p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg"
+  >
+    <div class="flex items-center justify-between mb-10">
+      <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200">
+        Dashboard
+      </h1>
+    </div>
+    <div class="dashboard flex justify-between">
+      <div>
+        <h2 class="dark:text-gray-300 mb-3 font-semibold">Financial Summary</h2>
+        <p class="dark:text-gray-300"><b class="font-medium">Total Income :</b> ₹{{ totalIncome }}</p>
+        <p class="dark:text-gray-300"><b class="font-medium">Total Expenses :</b> ₹{{ totalExpenses }}</p>
+        <p class="dark:text-gray-300"><b class="font-medium">Balance :</b> ₹{{ balance }}</p>
+
+        <h2 class="dark:text-gray-300 mb-3 mt-4 font-semibold">Budget Overview</h2>
+        <p class="dark:text-gray-300"><b class="font-medium">Monthly Budget :</b> ₹{{ monthlyBudget }}</p>
+        <p class="dark:text-gray-300"><b class="font-medium">Remaining Budget :</b> ₹{{ remainingBudget }}</p>
+      </div>
+
+      <!-- D3 Chart Placeholder -->
+
+      <div id="income-expense-chart" style="display: inline-block"></div>
+      <div
+        id="budget-chart"
+        style="display: inline-block; margin-left: 50px"
+      ></div>
+    </div>
+  </div>
+</div>
