@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = environment.apiUrl + 'login'; // replace with your backend URL
+  private apiUrl = environment.apiUrl; // replace with your backend URL
 
   constructor(private http: HttpClient, private routes: Router) {}
 
@@ -19,7 +19,7 @@ export class ApiService {
     // Optionally, you can set headers here
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-    return this.http.post(this.apiUrl, data, { headers });
+    return this.http.post(this.apiUrl  + 'login', data, { headers });
   }
 
   // Store token in localStorage after successful login (if needed)
@@ -39,6 +39,10 @@ export class ApiService {
   }
   getUserName(): string | null {
     return localStorage?.getItem('user');
+  }
+  // Register function
+  register(data: { userName: string; email: string; password: string }): Observable<any> {
+    return this.http.post(this.apiUrl + 'register', data);
   }
   // Logout user
   logout(): void {

@@ -22,12 +22,12 @@
       </div>
 
       <!-- D3 Chart Placeholder -->
-
-      <div id="income-expense-chart" style="display: inline-block"></div>
-      <div
-        id="budget-chart"
-        style="display: inline-block; margin-left: 50px"
-      ></div>
+       @if (totalIncome !== undefined && totalIncome > 0) {
+        <div id="income-chart" style="display: inline-block; margin-left: 50px"></div>
+      }
+      @if (monthlyBudget !== undefined && monthlyBudget > 0) {
+        <div id="budget-chart" style="display: inline-block; margin-left: 50px"></div>
+      }
     </div>
   </div>
 </div>
