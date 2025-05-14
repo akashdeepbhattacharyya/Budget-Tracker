@@ -53,7 +53,7 @@ export class AddEditComponent {
   transActionForm!: FormGroup;
   readonly dialogRef = inject(MatDialogRef<AddEditComponent>);
   readonly data = inject<any>(MAT_DIALOG_DATA);
-  isSubmitting = true;
+  isSubmitting = false;
   constructor(
     private fb: FormBuilder,
     private transactionService: TransactionService
