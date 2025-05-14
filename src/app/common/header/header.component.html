@@ -27,7 +27,7 @@
     </a>
 
     <div class="flex items-center gap-4">
-      <span> Hi, {{ user }} </span>
+      <span> Hi, {{ authService.getUserName() }} </span>
       <button color="warn" mat-flat-button (click)="authService.logout()">Logout</button>
     </div>
   </div>

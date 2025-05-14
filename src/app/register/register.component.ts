@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { ApiService } from '../services/auth-services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoaderService } from '../services/loader/loader.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import e from 'express';
 
 @Component({
   selector: 'app-register',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

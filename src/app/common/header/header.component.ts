@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [CommonModule, RouterLink, RouterModule, MatProgressBarModule, MatButtonModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
   user: string | null = '';
